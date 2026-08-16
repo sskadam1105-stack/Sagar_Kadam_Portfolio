@@ -1,0 +1,3783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Sagar Kadam — IT Infrastructure, Technical Support and Networking professional focused on CCNA, enterprise networking, Windows infrastructure and IT operations."
+  >
+
+  <meta
+    name="keywords"
+    content="Sagar Kadam, CCNA, Networking, IT Infrastructure, Technical Support, Network Engineer, Windows, TCP/IP, DNS, Active Directory, Microsoft 365"
+  >
+
+  <meta name="author" content="Sagar Kadam">
+
+  <meta property="og:title" content="Sagar Kadam | IT Infrastructure & Networking">
+
+  <meta
+    property="og:description"
+    content="IT Infrastructure and Networking professional building practical expertise across enterprise networking, Windows infrastructure and technical support."
+  >
+
+  <meta property="og:type" content="website">
+
+  <title>Sagar Kadam | IT Infrastructure & Networking</title>
+
+
+  <!-- =========================================================
+       FONTS
+       ========================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =========================================================
+       DESIGN SYSTEM
+       ========================================================= */
+
+    :root {
+
+      --teal-950: #032B29;
+      --teal-900: #063F3B;
+      --teal-800: #075E57;
+      --teal-700: #0F766E;
+
+      --mint: #65E6C2;
+      --mint-soft: #B7F4E4;
+
+      --cyan: #6DD5ED;
+
+      --white: #F4F7F5;
+      --white-pure: #FFFFFF;
+
+      --ink: #172322;
+      --ink-soft: #526361;
+
+      --line: #DCE7E4;
+      --line-dark: rgba(255,255,255,0.12);
+
+      --panel: #FFFFFF;
+      --panel-soft: #EEF5F3;
+
+      --danger: #E56B6F;
+
+      --heading: "Space Grotesk", sans-serif;
+      --body: "Inter", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+
+      --max-width: 1220px;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+
+      --shadow:
+        0 10px 30px rgba(3,43,41,0.08);
+
+      --shadow-lg:
+        0 30px 80px rgba(3,43,41,0.16);
+
+      --transition:
+        280ms cubic-bezier(.2,.75,.25,1);
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ::selection {
+      background: var(--mint);
+      color: var(--teal-950);
+    }
+
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      position: relative;
+      padding: 120px 0;
+    }
+
+    .section-dark {
+      background: var(--teal-950);
+      color: var(--white);
+    }
+
+    .section-soft {
+      background: var(--panel-soft);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--teal-700);
+
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .dark-eyebrow {
+      color: var(--mint);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading.center .eyebrow {
+      justify-content: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--heading);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 54px);
+    }
+
+    .section-heading p {
+      margin-top: 18px;
+      color: var(--ink-soft);
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .section-dark .section-heading p {
+      color: rgba(244,247,245,.66);
+    }
+
+
+    /* =========================================================
+       BACKGROUND GRID
+       ========================================================= */
+
+    .grid-background {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(7,94,87,.055) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(7,94,87,.055) 1px,
+          transparent 1px
+        );
+
+      background-size: 44px 44px;
+
+      pointer-events: none;
+
+      mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        rgba(0,0,0,.55) 65%,
+        transparent 100%
+      );
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+
+      z-index: 1000;
+
+      border-bottom: 1px solid transparent;
+
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(244,247,245,.88);
+      backdrop-filter: blur(18px);
+      border-color: var(--line);
+      box-shadow: 0 5px 25px rgba(3,43,41,.06);
+    }
+
+    .nav {
+      height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--teal-950);
+      color: var(--mint);
+
+      border: 1px solid rgba(101,230,194,.28);
+
+      border-radius: 12px;
+
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+
+      width: 22px;
+      height: 22px;
+
+      border: 1px solid var(--mint);
+
+      border-radius: 50%;
+
+      opacity: .18;
+
+      animation: brandPulse 3s infinite;
+    }
+
+    @keyframes brandPulse {
+
+      0% {
+        transform: scale(.6);
+        opacity: .4;
+      }
+
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+
+    }
+
+    .brand-name {
+      font-family: var(--heading);
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .brand-role {
+      display: block;
+
+      font-family: var(--mono);
+      font-size: 9px;
+
+      color: var(--ink-soft);
+
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      border-radius: 8px;
+
+      color: var(--ink-soft);
+
+      transition:
+        color var(--transition),
+        background var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-700);
+      background: var(--panel-soft);
+    }
+
+    .nav-cta {
+      padding: 11px 17px !important;
+
+      background: var(--teal-900) !important;
+      color: var(--white) !important;
+
+      border-radius: 8px !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--teal-700) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--white-pure);
+
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+
+      width: 20px;
+      height: 2px;
+
+      margin: 4px auto;
+
+      background: var(--teal-900);
+
+      transition: var(--transition);
+    }
+
+
+    /* =========================================================
+       RESUME BUTTON
+       ========================================================= */
+
+    .resume-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-btn::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(101,230,194,.18) 50%,
+        transparent 70%
+      );
+
+      transform: translateX(-120%);
+      transition: transform 600ms ease;
+
+      pointer-events: none;
+    }
+
+    .resume-btn:hover::after {
+      transform: translateX(120%);
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 820px;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 150px;
+      padding-bottom: 100px;
+
+      background:
+        radial-gradient(
+          circle at 80% 25%,
+          rgba(101,230,194,.15),
+          transparent 28%
+        ),
+        var(--white);
+
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, .95fr);
+
+      gap: 90px;
+
+      align-items: center;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 12px;
+
+      border: 1px solid rgba(7,94,87,.15);
+      border-radius: 100px;
+
+      background: rgba(238,245,243,.75);
+
+      color: var(--teal-800);
+
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--mint);
+
+      box-shadow:
+        0 0 0 4px rgba(101,230,194,.16);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6vw, 82px);
+      max-width: 800px;
+    }
+
+    .hero h1 .accent {
+      color: var(--teal-700);
+    }
+
+    .hero-lead {
+      margin-top: 27px;
+
+      max-width: 650px;
+
+      font-size: 18px;
+
+      color: var(--ink-soft);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      min-height: 48px;
+
+      padding: 0 20px;
+
+      border-radius: 9px;
+
+      border: 1px solid transparent;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal-900);
+      color: white;
+
+      box-shadow:
+        0 10px 25px rgba(3,43,41,.16);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-700);
+    }
+
+    .btn-secondary {
+      background: transparent;
+
+      color: var(--teal-900);
+
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal-700);
+      background: var(--panel-soft);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+
+      margin-top: 35px;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-label {
+      font-family: var(--mono);
+
+      font-size: 9px;
+      text-transform: uppercase;
+
+      letter-spacing: .1em;
+
+      color: var(--ink-soft);
+    }
+
+    .meta-value {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       3D NETWORK VISUAL
+       ========================================================= */
+
+    .network-stage {
+      position: relative;
+
+      width: 100%;
+      max-width: 540px;
+
+      aspect-ratio: 1 / .86;
+
+      margin-left: auto;
+
+      perspective: 1000px;
+    }
+
+    .network-panel {
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(101,230,194,.07),
+          transparent 50%
+        ),
+        var(--teal-950);
+
+      border-radius: 28px;
+
+      border: 1px solid rgba(101,230,194,.16);
+
+      box-shadow:
+        0 40px 100px rgba(3,43,41,.25);
+
+      overflow: hidden;
+
+      transform:
+        rotateX(5deg)
+        rotateY(-7deg)
+        rotateZ(.5deg);
+
+      transform-style: preserve-3d;
+
+      transition: transform 700ms cubic-bezier(.2,.75,.25,1);
+    }
+
+    .network-stage:hover .network-panel {
+      transform:
+        rotateX(2deg)
+        rotateY(-3deg)
+        rotateZ(0deg)
+        translateY(-5px);
+    }
+
+    .network-grid {
+      position: absolute;
+      inset: -20%;
+
+      background-image:
+        linear-gradient(
+          rgba(101,230,194,.06) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(101,230,194,.06) 1px,
+          transparent 1px
+        );
+
+      background-size: 34px 34px;
+
+      transform:
+        perspective(400px)
+        rotateX(62deg)
+        translateY(30%);
+
+      opacity: .7;
+    }
+
+    .network-header {
+      position: absolute;
+
+      top: 22px;
+      left: 24px;
+      right: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      z-index: 4;
+    }
+
+    .network-title {
+      font-family: var(--mono);
+
+      font-size: 10px;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      color: rgba(244,247,245,.55);
+    }
+
+    .network-live {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      font-family: var(--mono);
+      font-size: 9px;
+
+      color: var(--mint);
+    }
+
+    .network-live span {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--mint);
+
+      box-shadow:
+        0 0 12px var(--mint);
+
+      animation: liveBlink 1.8s infinite;
+    }
+
+    @keyframes liveBlink {
+
+      0%, 100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .35;
+      }
+
+    }
+
+    .network-svg {
+      position: absolute;
+
+      inset: 45px 25px 40px;
+
+      width: calc(100% - 50px);
+      height: calc(100% - 85px);
+
+      z-index: 2;
+
+      overflow: visible;
+    }
+
+    .network-line {
+      fill: none;
+
+      stroke: rgba(101,230,194,.28);
+      stroke-width: 1.5;
+
+      stroke-dasharray: 5 8;
+
+      animation: networkFlow 5s linear infinite;
+    }
+
+    .network-line.alt {
+      stroke: rgba(109,213,237,.28);
+      animation-duration: 7s;
+    }
+
+    @keyframes networkFlow {
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+
+    .network-node {
+      fill: var(--teal-950);
+
+      stroke: var(--mint);
+
+      stroke-width: 2;
+
+      filter:
+        drop-shadow(0 0 7px rgba(101,230,194,.3));
+    }
+
+    .network-node.cyan {
+      stroke: var(--cyan);
+    }
+
+    .node-label {
+      fill: rgba(244,247,245,.78);
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      letter-spacing: .04em;
+    }
+
+    .network-core {
+      fill: var(--mint);
+
+      filter:
+        drop-shadow(0 0 13px rgba(101,230,194,.7));
+
+      animation: corePulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes corePulse {
+
+      0%, 100% {
+        r: 9;
+      }
+
+      50% {
+        r: 12;
+      }
+
+    }
+
+    .network-footer {
+      position: absolute;
+
+      bottom: 18px;
+      left: 24px;
+      right: 24px;
+
+      display: flex;
+      justify-content: space-between;
+
+      z-index: 4;
+
+      font-family: var(--mono);
+      font-size: 9px;
+
+      color: rgba(244,247,245,.4);
+    }
+
+
+    /* =========================================================
+       INTRO STATS
+       ========================================================= */
+
+    .stats {
+      margin-top: 80px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat {
+      padding: 28px 25px;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      font-family: var(--heading);
+
+      font-size: 27px;
+      font-weight: 700;
+
+      color: var(--teal-800);
+    }
+
+    .stat-label {
+      margin-top: 5px;
+
+      font-family: var(--mono);
+      font-size: 9px;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: var(--ink-soft);
+    }
+
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-layout {
+      display: grid;
+
+      grid-template-columns:
+        .8fr
+        1.2fr;
+
+      gap: 90px;
+
+      align-items: start;
+    }
+
+    .about-intro {
+      position: sticky;
+      top: 130px;
+    }
+
+    .about-intro h2 {
+      max-width: 450px;
+    }
+
+    .about-copy p {
+      font-size: 16px;
+
+      color: var(--ink-soft);
+
+      margin-bottom: 20px;
+    }
+
+    .professional-note {
+      margin-top: 30px;
+
+      padding: 22px;
+
+      border-left: 2px solid var(--mint);
+
+      background: var(--panel-soft);
+    }
+
+    .professional-note p {
+      margin: 0;
+
+      font-size: 14px;
+
+      color: var(--ink);
+    }
+
+
+    /* =========================================================
+       FOCUS AREAS
+       ========================================================= */
+
+    .focus-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .focus-card {
+      position: relative;
+
+      padding: 30px;
+
+      background: var(--white-pure);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius-md);
+
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+      overflow: hidden;
+    }
+
+    .focus-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--teal-800),
+          var(--mint)
+        );
+
+      transform: scaleX(0);
+      transform-origin: left;
+
+      transition: transform var(--transition);
+    }
+
+    .focus-card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(7,94,87,.18);
+
+      box-shadow: var(--shadow);
+    }
+
+    .focus-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .focus-index {
+      font-family: var(--mono);
+
+      font-size: 10px;
+
+      color: var(--teal-700);
+
+      margin-bottom: 35px;
+    }
+
+    .focus-card h3 {
+      font-size: 21px;
+
+      margin-bottom: 10px;
+    }
+
+    .focus-card p {
+      font-size: 13px;
+
+      color: var(--ink-soft);
+    }
+
+
+    /* =========================================================
+       SKILLS
+       ========================================================= */
+
+    .skills-layout {
+      display: grid;
+
+      grid-template-columns:
+        .75fr
+        1.25fr;
+
+      gap: 70px;
+    }
+
+    .skills-intro {
+      max-width: 450px;
+    }
+
+    .skills-intro p {
+      color: rgba(244,247,245,.65);
+
+      font-size: 15px;
+    }
+
+    .skill-groups {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 14px;
+    }
+
+    .skill-group {
+      padding: 25px;
+
+      border: 1px solid var(--line-dark);
+
+      border-radius: var(--radius-md);
+
+      background: rgba(255,255,255,.035);
+
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .skill-group:hover {
+      background: rgba(255,255,255,.06);
+
+      border-color: rgba(101,230,194,.28);
+
+      transform: translateY(-3px);
+    }
+
+    .skill-group-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+      color: var(--mint);
+
+      margin-bottom: 18px;
+    }
+
+    .skill-group-title::before {
+      content: "";
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--mint);
+
+      box-shadow: 0 0 8px var(--mint);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-tag {
+      padding: 6px 9px;
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      background: rgba(255,255,255,.04);
+
+      border-radius: 6px;
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+
+      color: rgba(244,247,245,.72);
+    }
+
+
+    /* =========================================================
+       NETWORK LAB / PROJECTS
+       ========================================================= */
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project {
+      display: grid;
+
+      grid-template-columns:
+        90px
+        1fr
+        180px;
+
+      gap: 30px;
+
+      padding: 34px;
+
+      background: var(--white-pure);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius-lg);
+
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+
+      border-color: rgba(7,94,87,.22);
+
+      box-shadow: var(--shadow);
+    }
+
+    .project-number {
+      font-family: var(--mono);
+
+      font-size: 11px;
+
+      color: var(--teal-700);
+
+      padding-top: 5px;
+    }
+
+    .project-type {
+      display: block;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+      color: var(--teal-700);
+
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      font-size: 27px;
+
+      margin-bottom: 12px;
+    }
+
+    .project-description {
+      max-width: 650px;
+
+      font-size: 14px;
+
+      color: var(--ink-soft);
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-top: 18px;
+    }
+
+    .project-tech span {
+      padding: 6px 8px;
+
+      background: var(--panel-soft);
+
+      border-radius: 5px;
+
+      color: var(--teal-800);
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+    }
+
+    .project-status {
+      align-self: start;
+
+      padding: 9px 11px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 7px;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      color: var(--ink-soft);
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       TECHNICAL CAPABILITY MATRIX
+       ========================================================= */
+
+    .matrix {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 16px;
+    }
+
+    .matrix-card {
+      padding: 30px;
+
+      border: 1px solid var(--line-dark);
+
+      background: rgba(255,255,255,.025);
+
+      border-radius: var(--radius-md);
+    }
+
+    .matrix-card h3 {
+      font-size: 19px;
+
+      color: var(--white);
+
+      margin-bottom: 20px;
+    }
+
+    .matrix-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 11px 0;
+
+      border-bottom: 1px solid var(--line-dark);
+
+      font-size: 12px;
+
+      color: rgba(244,247,245,.65);
+    }
+
+    .matrix-row:last-child {
+      border-bottom: 0;
+    }
+
+    .matrix-level {
+      color: var(--mint);
+
+      font-family: var(--mono);
+      font-size: 9px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       CAREER DIRECTION
+       ========================================================= */
+
+    .career {
+      background:
+        radial-gradient(
+          circle at 80% 50%,
+          rgba(101,230,194,.12),
+          transparent 30%
+        ),
+        var(--teal-900);
+
+      color: var(--white);
+
+      overflow: hidden;
+    }
+
+    .career-layout {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 90px;
+
+      align-items: center;
+    }
+
+    .career h2 {
+      max-width: 580px;
+    }
+
+    .career-copy {
+      color: rgba(244,247,245,.7);
+
+      max-width: 580px;
+
+      margin-top: 20px;
+    }
+
+    .career-path {
+      position: relative;
+
+      padding-left: 30px;
+    }
+
+    .career-path::before {
+      content: "";
+
+      position: absolute;
+
+      left: 5px;
+      top: 12px;
+      bottom: 12px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          var(--mint),
+          rgba(101,230,194,.1)
+        );
+    }
+
+    .career-step {
+      position: relative;
+
+      padding: 15px 0 15px 25px;
+    }
+
+    .career-step::before {
+      content: "";
+
+      position: absolute;
+
+      left: -30px;
+      top: 23px;
+
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--teal-900);
+
+      border: 2px solid var(--mint);
+    }
+
+    .career-step strong {
+      display: block;
+
+      font-family: var(--heading);
+
+      font-size: 19px;
+
+      color: var(--white);
+    }
+
+    .career-step span {
+      display: block;
+
+      margin-top: 3px;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      color: rgba(244,247,245,.48);
+
+      letter-spacing: .07em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       EDUCATION
+       ========================================================= */
+
+    .education-card {
+      max-width: 850px;
+
+      display: grid;
+
+      grid-template-columns:
+        110px
+        1fr;
+
+      gap: 35px;
+
+      padding: 34px;
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius-lg);
+
+      background: var(--white-pure);
+    }
+
+    .education-year {
+      font-family: var(--mono);
+
+      font-size: 11px;
+
+      color: var(--teal-700);
+    }
+
+    .education-card h3 {
+      font-size: 24px;
+
+      margin-bottom: 7px;
+    }
+
+    .education-card p {
+      font-size: 14px;
+
+      color: var(--ink-soft);
+    }
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-section {
+      padding-bottom: 80px;
+    }
+
+    .contact-box {
+      position: relative;
+
+      padding: 70px;
+
+      background: var(--teal-950);
+
+      border-radius: 30px;
+
+      color: var(--white);
+
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      right: -160px;
+      top: -190px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(101,230,194,.18);
+
+      box-shadow:
+        0 0 0 70px rgba(101,230,194,.025),
+        0 0 0 140px rgba(101,230,194,.018);
+    }
+
+    .contact-box h2 {
+      max-width: 700px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-box p {
+      max-width: 620px;
+
+      margin-top: 18px;
+
+      color: rgba(244,247,245,.65);
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+
+      margin-top: 30px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-box .btn-primary {
+      background: var(--mint);
+
+      color: var(--teal-950);
+    }
+
+    .contact-box .btn-primary:hover {
+      background: var(--mint-soft);
+    }
+
+    .contact-box .btn-secondary {
+      color: var(--white);
+
+      border-color: rgba(255,255,255,.17);
+    }
+
+    .contact-box .btn-secondary:hover {
+      background: rgba(255,255,255,.07);
+
+      border-color: rgba(255,255,255,.3);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding: 35px 0;
+
+      background: var(--teal-950);
+
+      color: rgba(244,247,245,.55);
+
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-layout {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: var(--heading);
+
+      font-weight: 600;
+
+      color: var(--white);
+    }
+
+    .footer-role {
+      display: block;
+
+      margin-top: 3px;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      color: rgba(244,247,245,.4);
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--mint);
+    }
+
+    .copyright {
+      width: 100%;
+
+      padding-top: 22px;
+      margin-top: 20px;
+
+      border-top: 1px solid rgba(255,255,255,.07);
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity 700ms cubic-bezier(.2,.75,.25,1),
+        transform 700ms cubic-bezier(.2,.75,.25,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================================================
+       CURSOR / NETWORK ORB
+       ========================================================= */
+
+    .cursor-orb {
+      position: fixed;
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: var(--mint);
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      opacity: 0;
+
+      mix-blend-mode: multiply;
+
+      transition:
+        transform .08s linear,
+        opacity .2s ease;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .network-stage {
+        margin: 0 auto;
+      }
+
+      .about-layout,
+      .skills-layout,
+      .career-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .about-intro {
+        position: static;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      section {
+        padding: 85px 0;
+      }
+
+      .container {
+        width: min(
+          var(--max-width),
+          calc(100% - 36px)
+        );
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+      }
+
+      .project-status {
+        width: max-content;
+      }
+
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 45px 30px;
+      }
+
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .nav {
+        height: 72px;
+      }
+
+      .brand-role {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero-lead {
+        font-size: 16px;
+      }
+
+      .network-stage {
+        max-width: 100%;
+
+        aspect-ratio: 1 / .95;
+      }
+
+      .skill-groups {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .footer-layout {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header id="header">
+
+    <div class="container nav">
+
+      <a href="#home" class="brand">
+
+        <div class="brand-mark">
+          SK
+        </div>
+
+        <div>
+
+          <div class="brand-name">
+            Sagar Kadam
+          </div>
+
+          <span class="brand-role">
+            IT Infrastructure · Networking
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#focus">
+          Focus
+        </a>
+
+        <a href="#skills">
+          Skills
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#career">
+          Career
+        </a>
+
+        <a href="#education">
+          Education
+        </a>
+
+        <!-- RESUME BUTTON -->
+        <a
+          href="Sagar_Kadam_Resume.pdf"
+          download
+          class="resume-btn"
+        >
+          Resume
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-cta"
+        >
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+       ======================================================= -->
+
+  <div
+    id="mobileMenu"
+    style="
+      position:fixed;
+      top:72px;
+      left:0;
+      right:0;
+      z-index:999;
+      background:#F4F7F5;
+      border-bottom:1px solid #DCE7E4;
+      padding:18px;
+      display:none;
+    "
+  >
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#focus">
+      Focus Areas
+    </a>
+
+    <a href="#skills">
+      Technical Skills
+    </a>
+
+    <a href="#projects">
+      Projects
+    </a>
+
+    <a href="#career">
+      Career Direction
+    </a>
+
+    <a href="#education">
+      Education
+    </a>
+
+    <!-- MOBILE RESUME -->
+    <a
+      href="Sagar_Kadam_Resume.pdf"
+      download
+    >
+      Download Resume
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </div>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="grid-background"></div>
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+
+          <div class="reveal">
+
+            <div class="status">
+
+              <span class="status-dot"></span>
+
+              OPEN TO NETWORKING OPPORTUNITIES
+
+            </div>
+
+
+            <h1>
+
+              IT Infrastructure
+
+              <span class="accent">
+                & Networking.
+              </span>
+
+            </h1>
+
+
+            <p class="hero-lead">
+
+              I'm Sagar Kadam — an IT professional building practical
+              expertise across technical support, enterprise systems,
+              networking and infrastructure, with a focused career
+              direction toward CCNA and Network Engineering.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+              <a
+                href="#projects"
+                class="btn btn-primary"
+              >
+                View Technical Work
+                <span>→</span>
+              </a>
+
+
+              <!-- DOWNLOAD RESUME -->
+              <a
+                href="Sagar_Kadam_Resume.pdf"
+                download
+                class="btn btn-secondary resume-btn"
+              >
+                Download Resume
+                <span>↓</span>
+              </a>
+
+
+              <a
+                href="#contact"
+                class="btn btn-secondary"
+              >
+                Connect With Me
+              </a>
+
+            </div>
+
+
+            <div class="hero-meta">
+
+              <div class="meta-item">
+
+                <span class="meta-label">
+                  Location
+                </span>
+
+                <span class="meta-value">
+                  Pune, India
+                </span>
+
+              </div>
+
+
+              <div class="meta-item">
+
+                <span class="meta-label">
+                  Direction
+                </span>
+
+                <span class="meta-value">
+                  Networking / CCNA
+                </span>
+
+              </div>
+
+
+              <div class="meta-item">
+
+                <span class="meta-label">
+                  Focus
+                </span>
+
+                <span class="meta-value">
+                  Infrastructure
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               3D NETWORK
+               ================================================= -->
+
+          <div class="network-stage reveal">
+
+            <div class="network-panel">
+
+              <div class="network-grid"></div>
+
+
+              <div class="network-header">
+
+                <span class="network-title">
+                  NETWORK TOPOLOGY / LAB VIEW
+                </span>
+
+                <span class="network-live">
+
+                  <span></span>
+
+                  ACTIVE
+
+                </span>
+
+              </div>
+
+
+              <svg
+                class="network-svg"
+                viewBox="0 0 500 400"
+                aria-label="Network topology illustration"
+              >
+
+                <!-- CONNECTIONS -->
+
+                <path
+                  class="network-line"
+                  d="M250 190 L125 95"
+                />
+
+                <path
+                  class="network-line alt"
+                  d="M250 190 L375 95"
+                />
+
+                <path
+                  class="network-line"
+                  d="M250 190 L105 285"
+                />
+
+                <path
+                  class="network-line alt"
+                  d="M250 190 L395 285"
+                />
+
+                <path
+                  class="network-line"
+                  d="M125 95 L375 95"
+                />
+
+                <path
+                  class="network-line alt"
+                  d="M105 285 L395 285"
+                />
+
+
+                <!-- CORE -->
+
+                <circle
+                  class="network-core"
+                  cx="250"
+                  cy="190"
+                  r="10"
+                />
+
+                <text
+                  class="node-label"
+                  x="250"
+                  y="220"
+                  text-anchor="middle"
+                >
+                  CORE / ROUTER
+                </text>
+
+
+                <!-- NODE 1 -->
+
+                <circle
+                  class="network-node"
+                  cx="125"
+                  cy="95"
+                  r="17"
+                />
+
+                <text
+                  class="node-label"
+                  x="125"
+                  y="67"
+                  text-anchor="middle"
+                >
+                  SWITCH
+                </text>
+
+
+                <!-- NODE 2 -->
+
+                <circle
+                  class="network-node cyan"
+                  cx="375"
+                  cy="95"
+                  r="17"
+                />
+
+                <text
+                  class="node-label"
+                  x="375"
+                  y="67"
+                  text-anchor="middle"
+                >
+                  SERVER
+                </text>
+
+
+                <!-- NODE 3 -->
+
+                <circle
+                  class="network-node"
+                  cx="105"
+                  cy="285"
+                  r="17"
+                />
+
+                <text
+                  class="node-label"
+                  x="105"
+                  y="318"
+                  text-anchor="middle"
+                >
+                  ENDPOINTS
+                </text>
+
+
+                <!-- NODE 4 -->
+
+                <circle
+                  class="network-node cyan"
+                  cx="395"
+                  cy="285"
+                  r="17"
+                />
+
+                <text
+                  class="node-label"
+                  x="395"
+                  y="318"
+                  text-anchor="middle"
+                >
+                  INTERNET
+                </text>
+
+              </svg>
+
+
+              <div class="network-footer">
+
+                <span>
+                  TCP/IP · DNS · DHCP
+                </span>
+
+                <span>
+                  CCNA PATH
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             STATS
+             ================================================= -->
+
+        <div class="stats reveal">
+
+          <div class="stat">
+
+            <div class="stat-number">
+              IT
+            </div>
+
+            <div class="stat-label">
+              Infrastructure Focus
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="stat-number">
+              CCNA
+            </div>
+
+            <div class="stat-label">
+              Networking Direction
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="stat-number">
+              TCP/IP
+            </div>
+
+            <div class="stat-label">
+              Network Foundation
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="stat-number">
+              Pune
+            </div>
+
+            <div class="stat-label">
+              Preferred Location
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about-layout">
+
+
+          <div class="about-intro reveal">
+
+            <span class="eyebrow">
+              Profile
+            </span>
+
+            <h2>
+              Technology should work quietly,
+              reliably and predictably.
+            </h2>
+
+          </div>
+
+
+          <div class="about-copy reveal">
+
+            <p>
+
+              I am Sagar Kadam, an IT professional with a strong
+              interest in infrastructure, networking and technical
+              operations. My career direction is focused on developing
+              deeper expertise in enterprise networking and progressing
+              toward Network Engineer roles.
+
+            </p>
+
+
+            <p>
+
+              My technical interests cover Windows environments,
+              networking fundamentals, troubleshooting, user and
+              endpoint support, network communication and infrastructure
+              operations.
+
+            </p>
+
+
+            <p>
+
+              I approach technical problems by first understanding the
+              environment, isolating the issue, validating the cause
+              and then applying a structured solution.
+
+            </p>
+
+
+            <div class="professional-note">
+
+              <p>
+
+                <strong>
+                  Career direction:
+                </strong>
+
+                Technical Support →
+                IT Infrastructure →
+                CCNA / Networking →
+                Network Engineering
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOCUS AREAS
+         ===================================================== -->
+
+    <section
+      id="focus"
+      class="section-soft"
+    >
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Professional Focus
+          </span>
+
+          <h2>
+            Areas I am building depth in.
+          </h2>
+
+          <p>
+
+            A focused technical direction rather than a portfolio
+            overloaded with unrelated technologies.
+
+          </p>
+
+        </div>
+
+
+        <div class="focus-grid">
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              01 / NETWORKING
+            </div>
+
+            <h3>
+              Network Fundamentals
+            </h3>
+
+            <p>
+
+              TCP/IP, OSI model, IP addressing, subnetting,
+              DNS, DHCP, Wi-Fi and network troubleshooting.
+
+            </p>
+
+          </article>
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              02 / INFRASTRUCTURE
+            </div>
+
+            <h3>
+              IT Infrastructure
+            </h3>
+
+            <p>
+
+              Windows environments, endpoint configuration,
+              system troubleshooting and infrastructure operations.
+
+            </p>
+
+          </article>
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              03 / OPERATIONS
+            </div>
+
+            <h3>
+              Technical Operations
+            </h3>
+
+            <p>
+
+              Incident troubleshooting, user support, Microsoft
+              environments and structured IT service workflows.
+
+            </p>
+
+          </article>
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              04 / SECURITY
+            </div>
+
+            <h3>
+              Security Fundamentals
+            </h3>
+
+            <p>
+
+              Building foundational understanding of secure access,
+              authentication, network security and infrastructure hygiene.
+
+            </p>
+
+          </article>
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              05 / CLOUD
+            </div>
+
+            <h3>
+              Cloud Awareness
+            </h3>
+
+            <p>
+
+              Understanding how modern infrastructure, identity,
+              networking and cloud services connect.
+
+            </p>
+
+          </article>
+
+
+          <article class="focus-card reveal">
+
+            <div class="focus-index">
+              06 / CCNA
+            </div>
+
+            <h3>
+              Cisco Networking Path
+            </h3>
+
+            <p>
+
+              Developing practical networking knowledge aligned
+              with a long-term CCNA and Network Engineer career path.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+         ===================================================== -->
+
+    <section
+      id="skills"
+      class="section-dark"
+    >
+
+      <div class="container">
+
+        <div class="skills-layout">
+
+
+          <div class="skills-intro reveal">
+
+            <span class="eyebrow dark-eyebrow">
+              Technical Stack
+            </span>
+
+            <h2>
+              Tools and concepts behind the work.
+            </h2>
+
+            <p>
+
+              A practical infrastructure-oriented skill set with
+              networking as the long-term specialization.
+
+            </p>
+
+          </div>
+
+
+          <div class="skill-groups">
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                Networking
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">TCP/IP</span>
+                <span class="skill-tag">OSI Model</span>
+                <span class="skill-tag">IP Addressing</span>
+                <span class="skill-tag">Subnetting</span>
+                <span class="skill-tag">DNS</span>
+                <span class="skill-tag">DHCP</span>
+                <span class="skill-tag">Wi-Fi</span>
+                <span class="skill-tag">Network Troubleshooting</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                Windows Infrastructure
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">Windows</span>
+                <span class="skill-tag">Active Directory</span>
+                <span class="skill-tag">User Administration</span>
+                <span class="skill-tag">Endpoint Support</span>
+                <span class="skill-tag">System Troubleshooting</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                Microsoft Environment
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">Microsoft 365</span>
+                <span class="skill-tag">Email Support</span>
+                <span class="skill-tag">Office Applications</span>
+                <span class="skill-tag">User Support</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                IT Operations
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">ITSM</span>
+                <span class="skill-tag">Incident Handling</span>
+                <span class="skill-tag">Troubleshooting</span>
+                <span class="skill-tag">Documentation</span>
+                <span class="skill-tag">Technical Support</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                Platforms
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">Windows</span>
+                <span class="skill-tag">Microsoft Environment</span>
+                <span class="skill-tag">Networking Labs</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="skill-group reveal">
+
+              <div class="skill-group-title">
+                Career Specialization
+              </div>
+
+              <div class="skill-list">
+
+                <span class="skill-tag">CCNA</span>
+                <span class="skill-tag">Network Engineering</span>
+                <span class="skill-tag">Enterprise Networking</span>
+                <span class="skill-tag">Infrastructure</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TECHNICAL WORK
+         ===================================================== -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Technical Work
+          </span>
+
+          <h2>
+            Practical labs and workflows.
+          </h2>
+
+          <p>
+
+            Technical practice presented honestly as lab and
+            workflow work — without claiming fictional enterprise projects.
+
+          </p>
+
+        </div>
+
+
+        <div class="project-list">
+
+
+          <article class="project reveal">
+
+            <div class="project-number">
+              01
+            </div>
+
+
+            <div>
+
+              <span class="project-type">
+                Networking Lab / Practice
+              </span>
+
+              <h3>
+                Enterprise Network & Windows Support Lab
+              </h3>
+
+              <p class="project-description">
+
+                A structured technical practice environment focused
+                on understanding network communication, Windows
+                infrastructure and common enterprise troubleshooting
+                scenarios.
+
+              </p>
+
+
+              <div class="project-tech">
+
+                <span>TCP/IP</span>
+                <span>DNS</span>
+                <span>DHCP</span>
+                <span>Windows</span>
+                <span>Active Directory</span>
+                <span>Networking</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-status">
+              LAB / PRACTICE
+            </div>
+
+          </article>
+
+
+          <article class="project reveal">
+
+            <div class="project-number">
+              02
+            </div>
+
+
+            <div>
+
+              <span class="project-type">
+                IT Operations / Practice
+              </span>
+
+              <h3>
+                IT Service Desk & Endpoint Support Workflow
+              </h3>
+
+              <p class="project-description">
+
+                A practical workflow focused on incident identification,
+                troubleshooting, endpoint support, user communication
+                and structured resolution processes.
+
+              </p>
+
+
+              <div class="project-tech">
+
+                <span>ITSM</span>
+                <span>Windows</span>
+                <span>Microsoft 365</span>
+                <span>Troubleshooting</span>
+                <span>Endpoint Support</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-status">
+              PRACTICE
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TECHNICAL MATRIX
+         ===================================================== -->
+
+    <section class="section-dark">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow dark-eyebrow">
+            Capability Matrix
+          </span>
+
+          <h2>
+            Technical foundation.
+          </h2>
+
+        </div>
+
+
+        <div class="matrix">
+
+
+          <div class="matrix-card reveal">
+
+            <h3>
+              Networking Foundation
+            </h3>
+
+
+            <div class="matrix-row">
+              <span>OSI Model</span>
+              <span class="matrix-level">Foundation</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>TCP/IP</span>
+              <span class="matrix-level">Foundation</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>IP Addressing</span>
+              <span class="matrix-level">Foundation</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>Subnetting</span>
+              <span class="matrix-level">Foundation</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>DNS / DHCP</span>
+              <span class="matrix-level">Foundation</span>
+            </div>
+
+          </div>
+
+
+          <div class="matrix-card reveal">
+
+            <h3>
+              Infrastructure Foundation
+            </h3>
+
+
+            <div class="matrix-row">
+              <span>Windows</span>
+              <span class="matrix-level">Practical</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>Active Directory</span>
+              <span class="matrix-level">Practical</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>Microsoft 365</span>
+              <span class="matrix-level">Practical</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>Endpoint Support</span>
+              <span class="matrix-level">Practical</span>
+            </div>
+
+            <div class="matrix-row">
+              <span>Troubleshooting</span>
+              <span class="matrix-level">Practical</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAREER
+         ===================================================== -->
+
+    <section
+      id="career"
+      class="career"
+    >
+
+      <div class="container">
+
+        <div class="career-layout">
+
+
+          <div class="reveal">
+
+            <span class="eyebrow dark-eyebrow">
+              Career Direction
+            </span>
+
+            <h2>
+              From IT operations to network engineering.
+            </h2>
+
+            <p class="career-copy">
+
+              The objective is to build strong fundamentals first,
+              deepen networking expertise through CCNA-oriented
+              learning and move toward professional network
+              engineering responsibilities.
+
+            </p>
+
+          </div>
+
+
+          <div class="career-path reveal">
+
+
+            <div class="career-step">
+
+              <strong>
+                Technical Support
+              </strong>
+
+              <span>
+                Current foundation
+              </span>
+
+            </div>
+
+
+            <div class="career-step">
+
+              <strong>
+                IT Infrastructure
+              </strong>
+
+              <span>
+                Systems & operations
+              </span>
+
+            </div>
+
+
+            <div class="career-step">
+
+              <strong>
+                CCNA / Networking
+              </strong>
+
+              <span>
+                Technical specialization
+              </span>
+
+            </div>
+
+
+            <div class="career-step">
+
+              <strong>
+                Network Engineer
+              </strong>
+
+              <span>
+                Long-term professional direction
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+         ===================================================== -->
+
+    <section id="education">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">
+            Education
+          </span>
+
+          <h2>
+            Academic background.
+          </h2>
+
+        </div>
+
+
+        <div class="education-card reveal">
+
+          <div class="education-year">
+            B.Sc.
+          </div>
+
+          <div>
+
+            <h3>
+              Bachelor of Science
+            </h3>
+
+            <p>
+              Dr. Babasaheb Ambedkar Marathwada University
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section
+      id="contact"
+      class="contact-section"
+    >
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <span class="eyebrow dark-eyebrow">
+            Let's Connect
+          </span>
+
+          <h2>
+            Building toward stronger networks and better infrastructure.
+          </h2>
+
+          <p>
+
+            I am interested in opportunities where I can contribute
+            to IT infrastructure and technical operations while
+            continuing to grow toward networking and CCNA-focused roles.
+
+          </p>
+
+
+          <div class="contact-actions">
+
+            <a
+              href="mailto:sskadam1105@gmail.com"
+              class="btn btn-primary"
+            >
+              Email Me
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/sagar-kadam-538070394/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              LinkedIn
+            </a>
+
+
+            <a
+              href="https://github.com/sskadam1105-stack"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-layout">
+
+
+        <div>
+
+          <div class="footer-brand">
+            Sagar Kadam
+          </div>
+
+          <span class="footer-role">
+            IT Infrastructure · Networking · CCNA Direction
+          </span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a
+            href="mailto:sskadam1105@gmail.com"
+          >
+            Email
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/sagar-kadam-538070394/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+
+          <a
+            href="https://github.com/sskadam1105-stack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+
+          <a
+            href="Sagar_Kadam_Resume.pdf"
+            download
+          >
+            Resume
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span> Sagar Kadam.
+        Built for a career in IT Infrastructure & Networking.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       CURSOR
+       ======================================================= -->
+
+  <div
+    class="cursor-orb"
+    id="cursorOrb"
+  ></div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+
+    /* =======================================================
+       HEADER SCROLL
+       ======================================================= */
+
+    const header =
+      document.getElementById("header");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 20) {
+
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* =======================================================
+       MOBILE MENU
+       ======================================================= */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen =
+        mobileMenu.style.display === "block";
+
+
+      if (isOpen) {
+
+        mobileMenu.style.display = "none";
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      } else {
+
+        mobileMenu.style.display = "block";
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+      }
+
+    });
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileMenu.style.display = "none";
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+
+    /* =======================================================
+       SCROLL REVEAL
+       ======================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -45px 0px"
+        }
+
+      );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+    /* =======================================================
+       CURSOR ORB
+       ======================================================= */
+
+    const cursorOrb =
+      document.getElementById("cursorOrb");
+
+
+    if (
+      window.matchMedia("(pointer:fine)").matches
+    ) {
+
+      window.addEventListener(
+        "mousemove",
+        event => {
+
+          cursorOrb.style.opacity = "0.55";
+
+          cursorOrb.style.transform =
+            `translate3d(
+              ${event.clientX - 6}px,
+              ${event.clientY - 6}px,
+              0
+            )`;
+
+        }
+      );
+
+
+      window.addEventListener(
+        "mouseleave",
+        () => {
+
+          cursorOrb.style.opacity = "0";
+
+        }
+      );
+
+    }
+
+
+    /* =======================================================
+       NETWORK PARALLAX
+       ======================================================= */
+
+    const networkStage =
+      document.querySelector(".network-stage");
+
+
+    if (
+      networkStage &&
+      window.matchMedia("(pointer:fine)").matches
+    ) {
+
+      networkStage.addEventListener(
+        "mousemove",
+        event => {
+
+          const rect =
+            networkStage.getBoundingClientRect();
+
+
+          const x =
+            (event.clientX - rect.left) /
+            rect.width;
+
+
+          const y =
+            (event.clientY - rect.top) /
+            rect.height;
+
+
+          const rotateY =
+            -7 + (x * 8);
+
+
+          const rotateX =
+            5 - (y * 7);
+
+
+          const panel =
+            networkStage.querySelector(
+              ".network-panel"
+            );
+
+
+          panel.style.transform =
+            `rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             rotateZ(.3deg)
+             translateY(-4px)`;
+
+        }
+      );
+
+
+      networkStage.addEventListener(
+        "mouseleave",
+        () => {
+
+          const panel =
+            networkStage.querySelector(
+              ".network-panel"
+            );
+
+
+          panel.style.transform =
+            "rotateX(5deg) rotateY(-7deg) rotateZ(.5deg)";
+
+        }
+      );
+
+    }
+
+
+    /* =======================================================
+       CURRENT YEAR
+       ======================================================= */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* =======================================================
+       ACTIVE NAVIGATION
+       ======================================================= */
+
+    const sections =
+      document.querySelectorAll(
+        "main section[id]"
+      );
+
+
+    const desktopLinks =
+      document.querySelectorAll(
+        ".nav-links a"
+      );
+
+
+    const sectionObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              desktopLinks.forEach(link => {
+
+                link.style.color = "";
+
+              });
+
+
+              const active =
+                document.querySelector(
+                  `.nav-links a[href="#${entry.target.id}"]`
+                );
+
+
+              if (active) {
+
+                active.style.color =
+                  "var(--teal-700)";
+
+              }
+
+            }
+
+          });
+
+        },
+
+        {
+          rootMargin:
+            "-25% 0px -65% 0px"
+        }
+
+      );
+
+
+    sections.forEach(section => {
+
+      sectionObserver.observe(section);
+
+    });
+
+
+    /* =======================================================
+       KEYBOARD ACCESSIBILITY
+       ======================================================= */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          mobileMenu.style.display === "block"
+        ) {
+
+          mobileMenu.style.display = "none";
+
+          document.body.classList.remove(
+            "menu-open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+
+  </script>
+
+</body>
+
+</html>
